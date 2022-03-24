@@ -35,13 +35,14 @@ const MealForm =(props) => {
     return (
         <ul className='meal-list'>
             {/* <li> */}
-            {DUMMY_MEALS.map((meal) => {
+            {/* {DUMMY_MEALS.map((meal) => { */}
                 <MealItem 
-                // name={meal.name}
-                // description={meal.description}
-                // price={meal.price}
+                dummyMeals= {DUMMY_MEALS}
+                name={DUMMY_MEALS.name}
+                description={DUMMY_MEALS.description}
+                price={DUMMY_MEALS.price}
             />
-            })}
+            {/* })} */}
             {/* </li> */}
         </ul>
     )
