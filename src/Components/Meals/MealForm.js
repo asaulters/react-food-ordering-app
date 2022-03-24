@@ -32,20 +32,35 @@ const DUMMY_MEALS = [
 
 const MealForm =(props) => {
 
+    const mealArr = DUMMY_MEALS.map((meal) => {
+        id={DUMMY_MEALS.id}
+        name={DUMMY_MEALS.name},
+        description={DUMMY_MEALS.description},
+        price={DUMMY_MEALS.price}
+    })
+
     return (
-        <ul className='meal-list'>
-            {/* <li> */}
-            {/* {DUMMY_MEALS.map((meal) => { */}
+         <ul className='meal-list'>
+             <li> 
+             {DUMMY_MEALS.map((meal) => {
                 <MealItem 
-                dummyMeals= {DUMMY_MEALS}
-                name={DUMMY_MEALS.name}
-                description={DUMMY_MEALS.description}
-                price={DUMMY_MEALS.price}
+                // dummyMeals= {DUMMY_MEALS}
+                // name={DUMMY_MEALS.name}
+                // description={DUMMY_MEALS.description}
+                // price={DUMMY_MEALS.price}
             />
-            {/* })} */}
-            {/* </li> */}
-        </ul>
+            })} 
+            </li> 
+        </ul> 
     )
+
+    // <ul>
+    //     {DUMMY_MEALS.map(meal => {
+    //         return(
+    //             <li id={meal.id}>{meal.name}</li>
+    //         )
+    //     })}
+    // </ul>
 
 
 };
