@@ -40,11 +40,11 @@ const MealForm =(props) => {
 
 
     return (
-        <div>
+        <ul className='mealForm'>
             
                 <MealItem meals={meals} />
             
-        </div>
+        </ul>
     )
 
 

@@ -1,0 +1,23 @@
+.mealForm {
+    margin-top: 10%;
+    width: 80%;
+
+
+}
+
+.mealItem {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.mealItem-info{
+    grid-column: 1/2;
+}
+
+.mealItem-input{
+    grid-column: 3/4;
+}
+
+ul{
+    list-style: none;
+}
