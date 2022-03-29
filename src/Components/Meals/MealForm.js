@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import './Meals.css';
 import MealItem from './MealItem';
-// import DummyMeals from './DummyMeals';
+import AvalibleMeals from './AvalibleMeals';
 
 const DUMMY_MEALS = [
     {
@@ -33,14 +33,14 @@ const DUMMY_MEALS = [
 
 const MealForm =(props) => {
 
-    const [meals, setMeals] =useState(DUMMY_MEALS);
+    // const [meals, setMeals] =useState(DUMMY_MEALS);
 
 
 
     return (
         <ul className='mealForm'>
             
-                <MealItem meals={meals}  />
+                <MealItem  meals={AvalibleMeals} />
             
         </ul>
     )

@@ -1,16 +1,20 @@
 import React, { useContext, useState } from 'react';
 
-import Button from '../UI/Button/Button'
+import Card from '../UI/Card/Card';
+import MealItemForm from './MealItemForm';
+import AvalibleMeals from './AvalibleMeals';
+
+import Button from '../UI/Button/Button';
 import './Meals.css';
 
 const MealItem =(props) => {
 
 
-    const [currentCart, setCurrentCart] = useState(null)
+    const [cart, setCart] = useState(null)
 
     const addToCartHandler = (e, props) => {
       e.preventDefault();
-      console.log(props.value)
+      console.log(e.value)
     }
 
     const preventSub = (e)=> {
@@ -21,28 +25,31 @@ const MealItem =(props) => {
         return( <h2>No meals found!!</h2>)
     } else{
         return (
-            <form onSubmit={preventSub}>
+            <Card onSubmit={preventSub}>
                 {/* <ul className='mealItem'> */}
-                    {props.meals.map((meal)=> {
+                    {AvalibleMeals.map((meal)=> {
                         return<>
                             <ul className='mealItem' >
                                 <div className='mealItem-info'>
                                     <li>{meal.name}</li>
                                     <li>{meal.description}</li>
                                     <li>{meal.price}</li>
+                                    <MealItemForm 
+                                    id={meal.id}
+                                    key={meal.id}
+                                    name={meal.name}
+                                    description={meal.description}
+                                />
                                 </div>
-                                <div className='mealItem-input'>
-                                    <h3>Amount: <input type="number" placeholder='0' className='quantityInput' /></h3>
-                                    {/* <Button /> */}
-                                    <button type='submit' onClick={addToCartHandler}> + Add</button>
-                                </div>
+
+
                             </ul>
                         </>
                         
                     })};
 
                 {/* </ul> */}
-            </form>
+            </Card>
         )
 
     }

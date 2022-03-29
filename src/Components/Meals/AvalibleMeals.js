@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DUMMY_MEALS = [
+const AvalibleMeals = [
     {
       id: 'm1',
       name: 'Sushi',
@@ -28,4 +28,4 @@ const DUMMY_MEALS = [
   ];
 
 
-  export default DUMMY_MEALS;
+  export default AvalibleMeals;
