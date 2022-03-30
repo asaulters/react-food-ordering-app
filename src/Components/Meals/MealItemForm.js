@@ -1,13 +1,18 @@
+import { getValue } from "@testing-library/user-event/dist/utils";
 import Input from "../UI/Input/Input";
+import mealsCtx from '../Context/MealsContext';
 
 const MealItemForm = (props) => {
 
     const prevDef = (e, props) => {
         e.preventDefault();
-        console.log(props.value);
+        // console.log('this');
+        // return value;
+
     }
     return(
-        <form onSubmit={prevDef}>
+        // <mealsCtx.Consumer>
+        <form onSubmit={props.onSub}>
             <Input label="Amount" input={{
                 id: 'amount_' + props.id,
                 type: 'number',
@@ -18,6 +23,7 @@ const MealItemForm = (props) => {
             }} />
             <button> + Add</button>
         </form>
+        // </mealsCtx.Consumer>
         
             )
 }

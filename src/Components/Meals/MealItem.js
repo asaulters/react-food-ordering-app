@@ -3,29 +3,34 @@ import React, { useContext, useState } from 'react';
 import Card from '../UI/Card/Card';
 import MealItemForm from './MealItemForm';
 import AvalibleMeals from './AvalibleMeals';
+import mealsCtx from '../Context/MealsContext';
 
 import Button from '../UI/Button/Button';
 import './Meals.css';
 
+// export const mealsCtx = useContext(AvalibleMeals);
+
 const MealItem =(props) => {
 
-
+    const mealsCtx = useContext(AvalibleMeals);
     const [cart, setCart] = useState(null)
 
     const addToCartHandler = (e, props) => {
       e.preventDefault();
-      console.log(e.value)
+      console.log(e.value);
     }
 
     const preventSub = (e)=> {
-        e.preventDefault()
+        e.preventDefault();
+        console.log(e.target.value)
+        console.log(this)
     }
 
     if ( props.meals.length === 0) {
         return( <h2>No meals found!!</h2>)
     } else{
         return (
-            <Card onSubmit={preventSub}>
+            <Card >
                 {/* <ul className='mealItem'> */}
                     {AvalibleMeals.map((meal)=> {
                         return<>
@@ -39,6 +44,7 @@ const MealItem =(props) => {
                                     key={meal.id}
                                     name={meal.name}
                                     description={meal.description}
+                                    onSub={preventSub}
                                 />
                                 </div>
 
