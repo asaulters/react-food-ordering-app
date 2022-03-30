@@ -4,28 +4,21 @@ import mealsCtx from '../Context/MealsContext';
 
 const MealItemForm = (props) => {
 
-    const prevDef = (e, props) => {
-        e.preventDefault();
-        // console.log('this');
-        // return value;
-
-    }
     return(
-        // <mealsCtx.Consumer>
         <form onSubmit={props.onSub}>
-            <Input label="Amount" input={{
+            <Input label="Amount  " input={{
                 id: 'amount_' + props.id,
                 type: 'number',
                 min: '1',
                 max: '10',
                 step: '1',
                 defaultValue: '1'
-            }} />
+            }} 
+                
+            />
             <button> + Add</button>
-        </form>
-        // </mealsCtx.Consumer>
-        
-            )
+        </form>        
+        )
 }
 
 export default MealItemForm;

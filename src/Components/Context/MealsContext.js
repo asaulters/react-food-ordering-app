@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import AvalibleMeals from '../Meals/AvalibleMeals';
+// import AvalibleMeals from '../Meals/AvalibleMeals';
 
 const mealsCtx = props =>{
 

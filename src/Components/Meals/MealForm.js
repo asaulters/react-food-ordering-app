@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import './Meals.css';
 import MealItem from './MealItem';
-import AvalibleMeals from './AvalibleMeals';
+import AvailableMeals from './AvailableMeals';
 
 
 const MealForm =(props) => {
@@ -14,7 +14,7 @@ const MealForm =(props) => {
     return (
         <ul className='mealForm'>
             
-                <MealItem  meals={AvalibleMeals} />
+                <MealItem  meals={AvailableMeals} />
             
         </ul>
     )
