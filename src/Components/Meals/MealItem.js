@@ -15,10 +15,12 @@ const MealItem =(props) => {
     const [cart, setCart] = useState(null)
     const [curMeal, setCurMeal] = useState(null)
 
+
     const addToCartHandler = (e, props) => {
-      e.preventDefault();
-      console.log(this); //This is what I am using to try and target
-    }
+        e.preventDefault();
+        console.log(e.target.name, e.target.description, e.target.price); 
+      };
+  
 
 
 

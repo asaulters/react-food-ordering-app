@@ -5,7 +5,12 @@ import mealsCtx from '../Context/MealsContext';
 const MealItemForm = (props) => {
 
     return(
-        <form onSubmit={props.onSub}>
+        <form 
+        name={props.name} 
+        price={props.price}
+        description={props.description} 
+        onSubmit={props.onSub}
+        >
             <Input label="Amount  " input={{
                 id: 'amount_' + props.id,
                 type: 'number',
