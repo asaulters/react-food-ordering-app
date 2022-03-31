@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 const Cart = (props) => {
-    const [currentCart, setCurrentCart] = useState(null)
+    const [currentCart, setCurrentCart] = useState([])
+
+    const cart = useContext(currentCart); 
 
     const addToCartHandler = (props) => {
+        // setCurrentCart
+        console.log('CArt Baby')
         
     }
 
