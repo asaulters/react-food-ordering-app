@@ -1,6 +1,6 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
+// import { getValue } from "@testing-library/user-event/dist/utils";
 import Input from "../UI/Input/Input";
-import mealsCtx from '../Context/MealsContext';
+// import mealsCtx from '../Context/MealsContext';
 
 const MealItemForm = (props) => {
 
@@ -9,7 +9,7 @@ const MealItemForm = (props) => {
         name={props.name} 
         price={props.price}
         description={props.description} 
-        onSubmit={props.onSub}
+        onSubmit={props.onSubmit}
         >
             <Input label="Amount  " input={{
                 id: 'amount_' + props.id,

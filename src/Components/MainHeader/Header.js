@@ -8,6 +8,9 @@ import  './Header.css'
 
 const MainHeader = (props) => {
 
+    const cartLength = props.cartCounter;
+    console.log('Header' + cartLength)
+
     return (
         <div >
             <div className='header'>
