@@ -10,6 +10,9 @@ const Home = (props) => {
     const currentCartArr = [];
     let cartCounter = 0 ;
 
+    //  
+    // 
+    // 
 
 
     const cartUpdaterHandler = (cartItem) =>{
