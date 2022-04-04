@@ -1,18 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import Header from '../MainHeader/Header';
 import Intro from './Intro';
 import MealForm from '../Meals/MealForm';
 // import Cart from '../Cart/Cart'
 
+
 const Home = (props) => {
 
     const currentCartArr = [];
     let cartCounter = 0 ;
 
-    //  
-    // 
-    // 
 
 
     const cartUpdaterHandler = (cartItem) =>{

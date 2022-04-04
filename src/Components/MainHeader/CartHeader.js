@@ -10,7 +10,7 @@ const CartHeader = (props) => {
         <React.Fragment >
             <CartIcon />
             <h5 >Your Cart</h5>
-            <div className='cart-header-number'>2</div>
+            <div className='cart-header-number'>{props.counter}</div>
 
         </React.Fragment>
     )

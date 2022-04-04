@@ -17,7 +17,7 @@ const MainHeader = (props) => {
                 <div>
                     <h3>ReactMeals</h3>
                 </div>
-                <div className='cartHeader'><CartHeader /></div>
+                <div className='cartHeader'><CartHeader counter={cartLength} /></div>
                 
             </div>
             <div className='main-image'>
