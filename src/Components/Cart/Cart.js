@@ -6,7 +6,6 @@ const Cart = (props) => {
     // const cart = useContext(currentCart); 
 
     const currentCart = []
-
     
 
 

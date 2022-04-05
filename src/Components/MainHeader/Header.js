@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import CartHeader from './CartHeader'
 import HeaderImage from './meals.jpg'
 import Intro from '../Home/Intro'
+import CartContext from '../Context/cart-context';
 
 import  './Header.css'
 
 const MainHeader = (props) => {
+
+    const cartCtx = useContext(CartContext);
 
     const cartLength = props.cartCounter;
     console.log('Header' + cartLength)
