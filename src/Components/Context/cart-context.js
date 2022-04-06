@@ -1,11 +1,17 @@
 import React, {useContext, useEffect, useState} from 'react';
 
 const CartContext = React.createContext({
-    cartItems: 0
+    test: (() => { console.log('test')})
+
+
 });
 
 export const CartContextProvider = (props) => {
     const [currCartItem, setCurrCartItem] = useState(null);
+
+    const test = () => {
+        console.log(('test'))
+    }
 
     useEffect(() => {
         const storedCartInfo = localStorage.getItem('cartitem');
@@ -14,6 +20,16 @@ export const CartContextProvider = (props) => {
             console.log('>0')
         }
     }, [])
+
+    return (
+        <CartContext.Provider 
+            value={{
+                test: {}
+            }}
+        >
+            {props.children}
+        </CartContext.Provider>
+    )
 }
 
 export default CartContext; 

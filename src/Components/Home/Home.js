@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import { CartContextProvider } from '../Context/cart-context';
 
 import Header from '../MainHeader/Header';
 import Intro from './Intro';
@@ -9,6 +10,8 @@ import CartContext from '../Context/cart-context';
 
 const Home = (props) => {
 
+    const cartCtx = useContext(CartContextProvider)
+
     const currentCartArr = [];
     let cartCounter = 0 ;
 
@@ -18,6 +21,8 @@ const Home = (props) => {
           currentCartArr.push(cartItem);
           console.log(currentCartArr);
           cartLengthUpdater();
+          localStorage.setItem('newCartItem', {cartItem});
+          cartCtx.test()
           
         //   console.log(cartCounter)
     }
@@ -33,7 +38,8 @@ const Home = (props) => {
 
     return (
         <CartContext.Provider value={{
-            cartItems: currentCartArr
+            cartItems: currentCartArr,
+            name: 'eranmd'
         }} >
             <Header cartChange={cartLengthUpdater} cartCounter={cartCounter}/>
             <Intro />
