@@ -1,18 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import CartHeader from './CartHeader'
 import HeaderImage from './meals.jpg'
 import Intro from '../Home/Intro'
 import CartContext from '../Context/cart-context';
 
+// import { CountContext } from '../Home/Home';
+
 import  './Header.css'
 
 const MainHeader = (props) => {
 
     const cartCtx = useContext(CartContext);
+    const cart = [props.cart] 
 
-    const cartLength = props.cartCounter;
-    console.log('Header' + cartLength)
+    useEffect(() => {
+
+        console.log('useEffect from header ' + cart)
+    }, cart)
 
     return (
         <div >
@@ -20,7 +25,7 @@ const MainHeader = (props) => {
                 <div>
                     <h3>ReactMeals</h3>
                 </div>
-                <div className='cartHeader'><CartHeader counter={cartLength} /></div>
+                <div className='cartHeader'><CartHeader counter={cart} /></div>
                 
             </div>
             <div className='main-image'>

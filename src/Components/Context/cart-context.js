@@ -1,30 +1,23 @@
 import React, {useContext, useEffect, useState} from 'react';
 
 const CartContext = React.createContext({
-    test: (() => { console.log('test')})
+    cartItems: null
 
 
 });
 
 export const CartContextProvider = (props) => {
-    const [currCartItem, setCurrCartItem] = useState(null);
+    const [cart, setCart] = useState(null)
 
-    const test = () => {
-        console.log(('test'))
-    }
 
     useEffect(() => {
-        const storedCartInfo = localStorage.getItem('cartitem');
 
-        if(storedCartInfo.length > 0) {
-            console.log('>0')
-        }
     }, [])
 
     return (
         <CartContext.Provider 
             value={{
-                test: {}
+                cartItems:cart
             }}
         >
             {props.children}

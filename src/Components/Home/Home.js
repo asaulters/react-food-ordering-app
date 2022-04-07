@@ -1,4 +1,9 @@
-import React, {useContext} from 'react';
+import React, {
+    useContext, 
+    useState, 
+    useEffect,
+    useReducer
+        } from 'react';
 import { CartContextProvider } from '../Context/cart-context';
 
 import Header from '../MainHeader/Header';
@@ -7,45 +12,55 @@ import MealForm from '../Meals/MealForm';
 import CartContext from '../Context/cart-context';
 // import Cart from '../Cart/Cart'
 
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    case "reset":
+      return initialState;
+    default:
+      return state;
+  }
+};
+
+export const CountContext = React.createContext();
+
 
 const Home = (props) => {
+    const [cart, setCart] = useState([]);
+    const [count, dispatch] = useReducer(reducer, initialState);
+
 
     const cartCtx = useContext(CartContextProvider)
 
-    const currentCartArr = [];
     let cartCounter = 0 ;
-
-
+    let cartItem;
 
     const cartUpdaterHandler = (cartItem) =>{
-          currentCartArr.push(cartItem);
-          console.log(currentCartArr);
-          cartLengthUpdater();
-          localStorage.setItem('newCartItem', {cartItem});
-          cartCtx.test()
-          
-        //   console.log(cartCounter)
+        setCart([...cart, cartItem]);
+        cartItem= cartItem
+
     }
 
-    const cartLengthUpdater = () => {
-        cartCounter = currentCartArr.length;
-        console.log(cartCounter);
-        
-    }
+    useEffect(() => {
+        console.log(cart.length);
+        console.log(cart);
+        cartCounter = cart.length;
+    }, [cart])
 
-    // const cartCounter = currentCartArr.length;
+
     
 
     return (
-        <CartContext.Provider value={{
-            cartItems: currentCartArr,
-            name: 'eranmd'
-        }} >
-            <Header cartChange={cartLengthUpdater} cartCounter={cartCounter}/>
+        <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+            <Header cartChange={cart} cartCounter={cart}/>
             <Intro />
             <MealForm onAdd={cartUpdaterHandler} />
             {/* <Cart /> */}
-        </CartContext.Provider>
+        </CountContext.Provider>
     )
 }
 
