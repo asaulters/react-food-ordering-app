@@ -42,7 +42,7 @@ const Home = (props) => {
     const cartUpdaterHandler = (cartItem) =>{
         setCart([...cart, cartItem]);
         cartItem= cartItem
-
+// 
     }
 
     useEffect(() => {
