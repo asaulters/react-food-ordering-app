@@ -36,7 +36,7 @@ const Home = (props) => {
 
     const cartCtx = useContext(CartContextProvider)
 
-    let cartCounter = 0 ;
+    let cartCounter ;
     let cartItem;
 
     const cartUpdaterHandler = (cartItem) =>{

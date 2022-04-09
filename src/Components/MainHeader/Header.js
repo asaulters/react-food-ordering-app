@@ -16,8 +16,8 @@ const MainHeader = (props) => {
 
     useEffect(() => {
 
-        console.log('useEffect from header ' + cart)
-    }, cart)
+        console.log('useEffect from header ' + cart.length)
+    }, cart, cart.length)
 
     return (
         <div >
