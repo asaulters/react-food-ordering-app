@@ -1,8 +1,13 @@
+import React, {useContext} from 'react';
+
 // import { getValue } from "@testing-library/user-event/dist/utils";
 import Input from "../UI/Input/Input";
-// import mealsCtx from '../Context/MealsContext';
+import { CountContext } from '../Home/Home';
+
 
 const MealItemForm = (props) => {
+
+    const countContext = useContext(CountContext)
 
     return(
         <form 
@@ -18,10 +23,9 @@ const MealItemForm = (props) => {
                 max: '10',
                 step: '1',
                 defaultValue: '1'
-            }} 
-                
+            }}   
             />
-            <button> + Add</button>
+
         </form>        
         )
 }

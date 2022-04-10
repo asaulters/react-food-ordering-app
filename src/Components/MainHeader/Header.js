@@ -14,10 +14,10 @@ const MainHeader = (props) => {
     const cartCtx = useContext(CartContext);
     const cart = [props.cart] 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        console.log('useEffect from header ' + cart.length)
-    }, cart, cart.length)
+    //     console.log('useEffect from header ' + cart.length)
+    // }, [cart], [cart.length])
 
     return (
         <div >

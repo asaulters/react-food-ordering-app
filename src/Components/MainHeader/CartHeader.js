@@ -12,9 +12,10 @@ const CartHeader = (props) => {
     const cartCtx = useContext(CartContext);
     const countContext = useContext(CountContext);
 
-    useEffect(() => {
-        console.log('useEffect from cartHeader ' + countContext.countState)
-    }, [countContext])
+
+    // useEffect(() => {
+    //     console.log('useEffect from cartHeader ' + countContext.countState)
+    // }, [countContext])
 
 
     return (
@@ -23,7 +24,7 @@ const CartHeader = (props) => {
             <h5 >Your Cart</h5>
             {/* <div className='cart-header-number'>{props.counter}</div> */}
             <div className='cart-header-number'>{countContext.countState}</div>
-            <div className='cart-header-number'>1</div>
+
 
         </React.Fragment>
     )

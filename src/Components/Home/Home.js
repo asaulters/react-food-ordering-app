@@ -33,6 +33,8 @@ const Home = (props) => {
     const [cart, setCart] = useState([]);
     const [count, dispatch] = useReducer(reducer, initialState);
 
+    let totalPrice;
+
 
     const cartCtx = useContext(CartContextProvider)
 
@@ -41,7 +43,8 @@ const Home = (props) => {
 
     const cartUpdaterHandler = (cartItem) =>{
         setCart([...cart, cartItem]);
-        cartItem= cartItem
+        cartItem= cartItem;
+
 // 
     }
 
@@ -49,7 +52,11 @@ const Home = (props) => {
         console.log(cart.length);
         console.log(cart);
         cartCounter = cart.length;
+        totalPrice = cart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2);
+        console.log(totalPrice)
     }, [cart])
+
+    // const totalPrice = cart.reduce((acc, {price}) => acc + price, 0);
 
 
     
