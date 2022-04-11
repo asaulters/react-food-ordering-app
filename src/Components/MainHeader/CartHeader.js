@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 
 import CartIcon from './CartIcon';
 import CartContext from '../Context/cart-context';
+import CartModal from '../Cart/CartModal';
 
 import { CountContext} from '../Home/Home'
 
@@ -12,7 +13,9 @@ const CartHeader = (props) => {
     const cartCtx = useContext(CartContext);
     const countContext = useContext(CountContext);
 
-
+    const cartModalHandler = (e) => {
+        <CartModal />
+    }
     // useEffect(() => {
     //     console.log('useEffect from cartHeader ' + countContext.countState)
     // }, [countContext])
@@ -21,7 +24,7 @@ const CartHeader = (props) => {
     return (
         <React.Fragment >
             <CartIcon />
-            <h5 >Your Cart</h5>
+            <a onClick={cartModalHandler}>Your Cart</a>
             {/* <div className='cart-header-number'>{props.counter}</div> */}
             <div className='cart-header-number'>{countContext.countState}</div>
 
