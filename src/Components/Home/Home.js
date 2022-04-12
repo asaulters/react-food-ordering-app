@@ -63,7 +63,7 @@ const Home = (props) => {
 
     return (
         <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
-            <Header cartChange={cart} cartCounter={cart}/>
+            <Header cart={cart} cartCounter={cart}/>
             <Intro />
             <MealForm onAdd={cartUpdaterHandler} />
             {/* <Cart /> */}

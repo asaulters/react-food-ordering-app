@@ -8,28 +8,35 @@ import classes from './CartModal.module.css'
 const Backdrop = (props) =>{
     return <div className={classes.backdrop} onClick={props.onConfirm} />
   }
-
-  const ModalOverlay = (props) => {
-      return(
-        <Card className={classes.modal}>
-            <div className={classes.content}>
-                <p>Cart!!!</p>
-            </div>
-            <Button>Ok</Button>
-        </Card>
-      )
-  }
-
-const CartModal = (props) => {
-
+  
+  const ModalOverlay = (props) =>{  
     return (
-        <React.Fragment>
-            {ReactDOM.createPortal(
-                <Backdrop/>,
-                document.getElementById('backdrop-root')
-            )}
-        </React.Fragment>
+      <Card className={classes.modal}>
+      <header className={classes.header}>
+        <h2>{props.title}</h2>
+      </header>
+      <div className={classes.content}>
+        <p>{props.message}</p>
+      </div>
+      <footer className={classes.actions}>
+        <Button onClick={props.onConfirm}>Okay</Button>
+      </footer>
+    </Card> 
     )
-}
+  }
+  
+  const CartModal = (props) => {
+    return (
+      <React.Fragment>
+        {ReactDOM.createPortal(
+          <Backdrop onConfirm={props.onConfirm}/>,
+           document.getElementById('backdrop-root')
+        )};
+        {ReactDOM.createPortal(
+          <ModalOverlay title={props.title} message={props.message} onConfirm={props.onConfirm}/>,
+           document.getElementById('overlay-root'))}
+      </React.Fragment>
+    );
+  };
 
 export default CartModal;

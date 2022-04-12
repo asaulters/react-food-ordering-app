@@ -12,7 +12,8 @@ import  './Header.css'
 const MainHeader = (props) => {
 
     const cartCtx = useContext(CartContext);
-    const cart = [props.cart] 
+    const cartCount = [props.cart] 
+    const curCart = [props.cart]
 
     // useEffect(() => {
 
@@ -25,7 +26,7 @@ const MainHeader = (props) => {
                 <div>
                     <h3>ReactMeals</h3>
                 </div>
-                <div className='cartHeader'><CartHeader counter={cart} /></div>
+                <div className='cartHeader'><CartHeader counter={cartCount} cart={curCart}/></div>
                 
             </div>
             <div className='main-image'>
