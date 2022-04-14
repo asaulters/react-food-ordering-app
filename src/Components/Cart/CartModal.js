@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM  from 'react';
-import { createPortal} from 'react-dom'
+import ReactDOM  from 'react-dom';
+import { createPortal } from 'react-dom';
+
 
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button'
@@ -16,6 +17,7 @@ const Backdrop = (props) =>{
       <header className={classes.header}>
         <h2>{props.title}</h2>
       </header>
+
       <div className={classes.content}>
         <p>{props.message}</p>
       </div>
@@ -42,23 +44,24 @@ const Backdrop = (props) =>{
 
 // export default CartModal;
 
-const CartModal = ({ isVisible, hideModal }) => {
+const CartModal = ({ isVisible, hideModal, props }) => {
   
-    return isVisible
-      ? createPortal(
-          <div>
-                <React.Fragment>
-      {ReactDOM.createPortal(
-        <Backdrop onConfirm={hideModal}/>,
-         document.getElementById('backdrop-root')
-      )};
-      {ReactDOM.createPortal(
-        <ModalOverlay title='Cart Modal' message='cart message' />,
-         document.getElementById('overlay-root'))}
-    </React.Fragment>
-          </div>,
-          document.body,
-        )
-      : null;
-  };
+  return isVisible
+  ? createPortal(
+      <div>
+        <div>
+          <h5>Your Cart</h5>
+          <span>
+            {props.cart}
+          </span>
+        </div>
+        <button onClick={hideModal}>
+          Close
+        </button>
+      </div>,
+      document.body,
+    )
+  : null;
+
+};
   export default CartModal;

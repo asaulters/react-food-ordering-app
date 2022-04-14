@@ -6,6 +6,7 @@ import CartModal from '../Cart/CartModal';
 import useModal from '../Cart/useModal';
 
 import { CountContext} from '../Home/Home'
+// import {moda}
 
 import  './Header.css';
 
@@ -20,18 +21,23 @@ const CartHeader = (props) => {
 
     const cartModalHandler = (props) => {
         console.log('cartmodalhandler');
-        <CartModal isVisible={isVisible} hideModal={toggleModal}  />
+        <CartModal isVisible={isVisible} hideModal={toggleModal} cart={curCart} />
     }
 
     const cartCur =() => {
-        props.cart.map((curCartItem) => {
+        const cartNow = props.cart.map((curCartItem) => {
             console.log(curCartItem)
+            // toggleModal(true)
         });
         
-        <CartModal isVisible={isVisible} hideModal={toggleModal}  />
+        <CartModal isVisible={isVisible} hideModal={toggleModal} cart={cartNow}  />
         // cartModalHandler();
         // console.log(props.cart)
     }
+
+    // const modalHandler = () => {
+    //     p
+    // }
 
     // useEffect(() => {
     //     console.log('useEffect from cartHeader ' + countContext.countState)
@@ -41,7 +47,7 @@ const CartHeader = (props) => {
     return (
         <React.Fragment >
             <CartIcon />
-            <a onClick={toggleModal}>Your Cart</a>
+            <a onClick={modalCtx.modalHandler}>Your Cart</a>
             <CartModal isVisible={isVisible} hideModal={toggleModal}  />
             {/* <div className='cart-header-number'>{props.counter}</div> */}
             <div className='cart-header-number'>{countContext.countState}</div>
