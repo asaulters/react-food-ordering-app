@@ -11,6 +11,7 @@ import Intro from './Intro';
 import MealForm from '../Meals/MealForm';
 import CartContext from '../Context/cart-context';
 import useModal from '../Cart/useModal';
+import CartModal from '../Cart/CartModal';
 // import Cart from '../Cart/Cart'
 
 const initialState = 0;
@@ -51,27 +52,32 @@ const Home = (props) => {
     }
 
     useEffect(() => {
-        console.log(cart.length);
-        console.log(cart);
+        // console.log(cart.length);
+        // console.log(cart);
         cartCounter = cart.length;
         totalPrice = cart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2);
-        console.log(totalPrice);
-        console.log('end home effect')
+        // console.log(totalPrice);
+        // console.log('end home effect')
     }, [cart])
 
     // const totalPrice = cart.reduce((acc, {price}) => acc + price, 0);
 
 
     const modalHandler = () => {
-      console.log('Home modal handler')
+      toggleModal(true)
+      // console.log('Home modal handler')
+      // console.log(cart)
+      // console.log(totalPrice)
     }
 
     return (
-        <CountContext.Provider value={{ countState: count, countDispatch: dispatch }} >
-            <Header cart={cart} cartCounter={cart}/>
+        <CountContext.Provider value={{ countState: count, countDispatch: dispatch, currentCart: cart}} >
+            <Header cart={cart} cartCounter={cart} modal={modalHandler}/>
+
             <Intro />
             <MealForm onAdd={cartUpdaterHandler} />
             {/* <Cart /> */}
+            <CartModal isVisible={isVisible} hideModal={toggleModal} currentCart={cart} totalPrice={totalPrice}/>
         </CountContext.Provider>
     )
 }

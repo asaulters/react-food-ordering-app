@@ -26,7 +26,7 @@ const MainHeader = (props) => {
                 <div>
                     <h3>ReactMeals</h3>
                 </div>
-                <div className='cartHeader'><CartHeader counter={cartCount} cart={curCart}/></div>
+                <div className='cartHeader'><CartHeader counter={cartCount} cart={curCart} modal={props.modal}/></div>
                 
             </div>
             <div className='main-image'>

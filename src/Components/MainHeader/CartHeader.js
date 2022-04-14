@@ -47,8 +47,8 @@ const CartHeader = (props) => {
     return (
         <React.Fragment >
             <CartIcon />
-            <a onClick={modalCtx.modalHandler}>Your Cart</a>
-            <CartModal isVisible={isVisible} hideModal={toggleModal}  />
+            <a onClick={props.modal}>Your Cart</a>
+            {/* <CartModal isVisible={isVisible} hideModal={toggleModal}  /> */}
             {/* <div className='cart-header-number'>{props.counter}</div> */}
             <div className='cart-header-number'>{countContext.countState}</div>
 

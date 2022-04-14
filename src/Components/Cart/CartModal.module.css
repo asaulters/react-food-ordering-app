@@ -1,4 +1,4 @@
-.backdrop {
+/* .backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,4 +43,17 @@
       width: 40rem;
     }
   }
-  
+   */
+
+.modal-card{
+  align-items: center;
+  background: white;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1.875rem;
+  max-width: 500px;
+  position: fixed;
+  z-index: 100;
+  color: white;
+}

@@ -28,7 +28,7 @@ const MealItem =(props) => {
             price: mealPrice,
             description: mealDesc
         };
-        console.log(newCartItemObj);
+        // console.log(newCartItemObj);
         props.onAdd(newCartItemObj);
       };
       
@@ -38,8 +38,8 @@ const MealItem =(props) => {
     } else{
         return (
             <Card >
-                    {AvailableMeals.map((meal)=> {
-                        return<>
+                    {AvailableMeals.map((meal, i)=> {
+                        return<div key={i}>
                             <ul className='mealItem'>
                                 <div className='mealItem-info'>
                                     <li>{meal.name}</li>
@@ -57,7 +57,7 @@ const MealItem =(props) => {
 
 
                             </ul>
-                        </>
+                        </div>
                         
                     })};
 
