@@ -38,36 +38,20 @@ const Home = (props) => {
 
     let totalPrice;
 
-
-    const cartCtx = useContext(CartContextProvider)
-
     let cartCounter ;
-    let cartItem;
 
     const cartUpdaterHandler = (cartItem) =>{
         setCart([...cart, cartItem]);
         cartItem= cartItem;
-
-// 
     }
 
     useEffect(() => {
-        // console.log(cart.length);
-        // console.log(cart);
         cartCounter = cart.length;
         totalPrice = cart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2);
-        // console.log(totalPrice);
-        // console.log('end home effect')
     }, [cart])
-
-    // const totalPrice = cart.reduce((acc, {price}) => acc + price, 0);
-
 
     const modalHandler = () => {
       toggleModal(true)
-      // console.log('Home modal handler')
-      // console.log(cart)
-      // console.log(totalPrice)
     }
 
     return (

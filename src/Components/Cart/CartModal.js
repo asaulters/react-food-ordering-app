@@ -47,9 +47,6 @@ const Backdrop = (props) =>{
 // export default CartModal;
 
 const CartModal = ({ isVisible, hideModal, currentCart }) => {
-
-  const countContext = useContext(CountContext);
-
   
   
   return isVisible
