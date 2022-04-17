@@ -6,8 +6,8 @@ import { CountContext} from '../Home/Home'
 
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button'
-import classes from './CartModal.module.css'
-import styles from './CartModal.module.css'
+// import classes from './CartModal.css'
+import './CartModal.css'
   
 
 const CartModal = ({ isVisible, hideModal, currentCart }) => {
@@ -42,3 +42,5 @@ const CartModal = ({ isVisible, hideModal, currentCart }) => {
 
 };
   export default CartModal;
+
+  
