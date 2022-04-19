@@ -41,6 +41,7 @@ const CartModal = ({ isVisible, hideModal, currentCart }) => {
   : null;
 
 };
+
+
   export default CartModal;
 
-  
