@@ -7,16 +7,18 @@
     z-index: 10;
     background: rgba(0, 0, 0, 0.75);
   }
-  
+  /*  */
   .modal {
     position: fixed;
     top: 30vh;
-    left: 10%;
+    left: 30vh;
+    right: 30vh;
     width: 80%;
-    z-index: 100;
+    z-index: 1000;
     overflow: hidden;
+    /* margin: auto; */
   }
-  
+/*   
   .header {
     background: #4f005f;
     padding: 1rem;
@@ -43,17 +45,35 @@
       width: 40rem;
     }
   }
-   */
-
-.modal-card{
-  align-items: center;
-  background: white;
-  border-radius: 0.25rem;
-  display: flex;
-  flex-direction: column;
-  margin: 1.875rem;
-  max-width: 500px;
+   /*  */
+.modalDiv{
   position: fixed;
+  top: 30vh;
+  left: 30%;
+  /* padding-left: 10%; */
+  width: 40%;
   z-index: 100;
-  color: white;
+  overflow: hidden;
+  background-color: white;
+} 
+
+.modalH5 {
+  margin-left: 40%;
+}
+
+.contextProvider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+.custom_overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;    
+  background-color: rgba(0, 0, 0, 0.78);
 }
