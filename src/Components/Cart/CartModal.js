@@ -26,28 +26,33 @@ const CartModal = ({ isVisible, hideModal, currentCart }) => {
   return isVisible
   ? createPortal(
       <Card className={classes.modal}>
+      <div className={classes.modalBackground}>
         <div className={classes.modalDiv}>
-          <h5 className={classes.modalH5}>Your Cart</h5>
-            {currentCart.map((cartItem, i) => {
-              return<div key={i}>
-                <ul className='cartModalItem' key={i}>
-                  <div className={classes.cartModalItemInfo} >
+          <div className={classes.modalHeader}>
+            <h5 className={classes.modalHeaderH5}>Your Cart</h5>
+            <button className={classes.modalHeaderX} onClick={hideModal}> X </button>
+          </div>
+          <div className={classes.modalBody}>          
+              {currentCart.map((cartItem, i) => {
+                return<div key={i}>
+                  <ul className='cartModalItem' key={i}>
+                    <div className={classes.cartModalItemInfo} >
 
-                    <li className={classes.cartModalName}>{cartItem.name}</li>
-                    <li className={classes.cartModalPrice}>{cartItem.price}</li>
-                    <li className={classes.cartModalDesc}>{cartItem.description}</li>
-                  </div>
-                </ul>
-              </div>
-            })}
-            <h5 className={classes.cartModalName}>Total:{currentCart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2)} </h5>
-            <button className={classes.cartModalName} onClick={hideModal}>
-          Close
-        </button>
+                      <li className={classes.cartModalName}>{cartItem.name}</li>
+                      <li className={classes.cartModalPrice}>{cartItem.price}</li>
+                      <li className={classes.cartModalDesc}>{cartItem.description}</li>
+                    </div>
+                  </ul>
+                </div>
+              })}
+              <h5 className={classes.modalTotal}>Total:{currentCart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2)} </h5>
+          </div>
+            <div className={classes.modalFooter}>
+                <button className={classes.closeModalButton} onClick={hideModal}> Close </button>
+                <button className={classes.orderModalButton}>Checkout</button>
+            </div>
         </div>
-        {/* <button onClick={hideModal}>
-          Close
-        </button> */}
+      </div>
       </Card>,
       document.body,
     )

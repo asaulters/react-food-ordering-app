@@ -1,79 +1,53 @@
-/* .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.75);
-  }
-  /*  */
-  .modal {
-    position: fixed;
-    top: 30vh;
-    left: 30vh;
-    right: 30vh;
-    width: 80%;
-    z-index: 1000;
-    overflow: hidden;
-    /* margin: auto; */
-  }
-/*   
-  .header {
-    background: #4f005f;
-    padding: 1rem;
-  }
-  
-  .header h2 {
-    margin: 0;
-    color: white;
-  }
-  
-  .content {
-    padding: 1rem;
-  }
-  
-  .actions {
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  @media (min-width: 768px) {
-    .modal {
-      left: calc(50% - 20rem);
-      width: 40rem;
-    }
-  }
-   /*  */
+
 .modalDiv{
   position: fixed;
   top: 30vh;
   left: 30%;
   /* padding-left: 10%; */
-  width: 40%;
+  width: 60%;
+  height: fit-content;
   z-index: 100;
-  overflow: hidden;
+  overflow:auto ;
   background-color: white;
+  display: grid;
+  grid-template-rows: 100px 100% 60px;
 } 
 
-.modalH5 {
-  margin-left: 40%;
-}
-
-.contextProvider{
-  position: absolute;
-  top: 0;
-  left: 0;
+.modalBackground{
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-}
-.custom_overlay {
+  z-index: 10;
+  background: rgba(209, 207, 207, 0.75);
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;    
-  background-color: rgba(0, 0, 0, 0.78);
+}
+
+.modalHeader{
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px grey solid;
+  padding-bottom: 5%;
+  margin-top: 5%;
+}
+
+.modalHeaderH5 {
+  margin-left: 5%;
+  /* font-size: 15px; */
+}
+
+.modalHeaderX{
+  margin-right: 2%;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+.modalBody{
+  grid-row: 2/3;
+}
+
+.modalFooter{
+  grid-row: 3/4;
 }
