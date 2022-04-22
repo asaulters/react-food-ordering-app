@@ -56,6 +56,10 @@ const Home = (props) => {
       toggleModal(true)
     }
 
+    const removeCartMealItem = () => {
+      console.log('this')
+    }
+
     return (
         <CountContext.Provider 
           value={{ countState: count, 
@@ -71,15 +75,7 @@ const Home = (props) => {
               hideModal={toggleModal} 
               currentCart={cart} 
               totalPrice={totalPrice}
-              style={{
-          position: 'absolute',
-          border: '2px solid #000',
-          backgroundColor: 'gray',
-          boxShadow: '2px solid black',
-          height:80,
-          width: 240,
-          margin: 'auto'
-        }}
+              remove={removeCartMealItem}
               />
           )}
             <Header cart={cart} cartCounter={cart} modal={modalHandler}/>
