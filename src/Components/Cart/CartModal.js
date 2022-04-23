@@ -20,10 +20,10 @@ import classes from './CartModal.module.css'
 // `;
   
 
-const CartModal = ({ isVisible, hideModal, currentCart }, props) => {
+const CartModal = ({ isVisible, hideModal, currentCart, removeCartMealItem }) => {
 
-  const checkKey = () => {
-    console.log(this.key)
+  const checkKey = (e) => {
+    console.log(this)
   }
   
   
