@@ -23,10 +23,12 @@ const MealItem =(props) => {
         const mealName = e.target.name;
         const mealPrice = e.target.getAttribute('price');
         const mealDesc = e.target.getAttribute('description');
+        
         const newCartItemObj = {
             name: mealName,
             price: mealPrice,
-            description: mealDesc
+            description: mealDesc,
+            id: Math.random()
         };
         // console.log(newCartItemObj);
         props.onAdd(newCartItemObj);
@@ -38,8 +40,8 @@ const MealItem =(props) => {
     } else{
         return (
             <Card >
-                    {AvailableMeals.map((meal, i)=> {
-                        return<div key={i}>
+                    {AvailableMeals.map((meal)=> {
+                        return<div key={meal.id} >
                             <ul className='mealItem'>
                                 <div className='mealItem-info'>
                                     <li>{meal.name}</li>
@@ -52,6 +54,7 @@ const MealItem =(props) => {
                                     description={meal.description}
                                     price={meal.price}
                                     onSubmit={addToCartHandler}
+                                    
                                 />
                                 </div>
 

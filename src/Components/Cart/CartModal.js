@@ -20,11 +20,11 @@ import classes from './CartModal.module.css'
 // `;
   
 
-const CartModal = ({ isVisible, hideModal, currentCart, removeCartMealItem, props }) => {
+const CartModal = ({ isVisible, hideModal, currentCart, remove }, props) => {
 
-  const checkKey = () => {
-    console.log(removeCartMealItem)
-  }
+  // const checkKey = () => {
+  //   console.log(cartItem.id)
+  // }
   
   
   return isVisible
@@ -38,8 +38,8 @@ const CartModal = ({ isVisible, hideModal, currentCart, removeCartMealItem, prop
           </div>
           <div className={classes.modalBody}>          
               {currentCart.map((cartItem, i) => {
-                return<div key={i}>
-                  <ul className={classes.cartModalItem} key={i}>
+                return<div key={Math.random()}>
+                  <ul className={classes.cartModalItem} key={Math.random()}>
                     <div className={classes.cartModalItemInfo} >
 
                       <li className={classes.cartModalName}>{cartItem.name}</li>
@@ -47,7 +47,7 @@ const CartModal = ({ isVisible, hideModal, currentCart, removeCartMealItem, prop
                       <li className={classes.cartModalDesc}>{cartItem.description}</li>
                       
                     </div>
-                    <button className={classes.cartModalX} onClick={checkKey}>X</button>
+                    <button className={classes.cartModalX} onClick={()=>{console.log(this)}}>X</button>
                   </ul>
                 </div>
               })}

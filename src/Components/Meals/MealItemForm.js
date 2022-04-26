@@ -9,6 +9,7 @@ const MealItemForm = (props) => {
 
     const countContext = useContext(CountContext)
 
+
     return(
         <form 
         name={props.name} 
@@ -22,7 +23,7 @@ const MealItemForm = (props) => {
                 min: '1',
                 max: '10',
                 step: '1',
-                defaultValue: '1'
+                defaultValue: '1',
             }}   
             />
 
