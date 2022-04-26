@@ -60,8 +60,8 @@ const Home = (props) => {
       console.log('this')
     }
 
-    const removeCI = () => {
-      console.log('thisCI')
+    const removeCI = (cartItem) => {
+      console.log(cartItem)
     }
 
     return (

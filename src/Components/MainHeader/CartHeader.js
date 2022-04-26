@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import CartIcon from './CartIcon';
-import CartContext from '../Context/cart-context';
+// import CartContext from '../Context/cart-context';
 import CartModal from '../Cart/CartModal';
 import useModal from '../Cart/useModal';
 
@@ -14,7 +14,7 @@ const CartHeader = (props) => {
     const [modal, setModal] = useState(false)
     const {isVisible, toggleModal} = useModal();
 
-    const cartCtx = useContext(CartContext);
+    // const cartCtx = useContext(CartContext);
     const countContext = useContext(CountContext);
 
     const curCart = [props.cart]

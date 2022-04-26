@@ -11,7 +11,7 @@ import  './Header.css'
 
 const MainHeader = (props) => {
 
-    const cartCtx = useContext(CartContext);
+    // const cartCtx = useContext(CartContext);
     const cartCount = [props.cart] 
     const curCart = [props.cart]
 

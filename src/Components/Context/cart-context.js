@@ -1,25 +1,25 @@
 import React, {useContext, useEffect, useState} from 'react';
 
-const CartProvider = (props) =>{
+// const CartProvider = (props) =>{
 
-    const addITemToCartHandler = (item) => {
+//     const addITemToCartHandler = (item) => {
 
-    }
+//     }
 
-    const removeItemFromCartHandler = (id) => {
+//     const removeItemFromCartHandler = (id) => {
 
-    }
+//     }
 
-    const cartContext = {
-        items: [],
-        totalAmount: 0,
-        addItem: addITemToCartHandler,
-        removeItem: removeItemFromCartHandler,
-    }
+//     const cartContext = {
+//         items: [],
+//         totalAmount: 0,
+//         addItem: addITemToCartHandler,
+//         removeItem: removeItemFromCartHandler,
+//     }
 
-    return <CartContext.Provider value={cartContext}>
-        {props.children}
-    </CartContext.Provider>
-}
+//     return <CartContext.Provider value={cartContext}>
+//         {props.children}
+//     </CartContext.Provider>
+// }
 
-export default CartProvider
+// export default CartProvider

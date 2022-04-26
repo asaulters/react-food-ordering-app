@@ -22,9 +22,9 @@ import classes from './CartModal.module.css'
 
 const CartModal = ({ isVisible, hideModal, currentCart, remove }, props) => {
 
-  // const checkKey = () => {
-  //   console.log(cartItem.id)
-  // }
+  const removeItemFromCartHandler = (cartItem) => {
+    remove(cartItem) 
+  }
   
   
   return isVisible
@@ -47,7 +47,7 @@ const CartModal = ({ isVisible, hideModal, currentCart, remove }, props) => {
                       <li className={classes.cartModalDesc}>{cartItem.description}</li>
                       
                     </div>
-                    <button className={classes.cartModalX} onClick={()=>{console.log(this)}}>X</button>
+                    <button className={classes.cartModalX} onClick={removeItemFromCartHandler}>X</button>
                   </ul>
                 </div>
               })}
