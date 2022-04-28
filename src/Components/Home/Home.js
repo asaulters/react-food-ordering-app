@@ -42,6 +42,8 @@ const Home = (props) => {
 
     let cartCounter ;
 
+    
+
     const cartUpdaterHandler = (cartItem) =>{
         setCart([...cart, cartItem]);
         cartItem= cartItem;
@@ -60,8 +62,23 @@ const Home = (props) => {
       console.log('this')
     }
 
-    const removeCI = (cartItem) => {
-      console.log(cartItem)
+    
+
+    const removeCI = ( cartItemId) => {
+      // console.log(cartItem) //logs cartItem.id of target
+      // const newCart = cart.filter((cartItem) => cartItem !== cartItem).map(filteredItems => (
+      //   <li>
+      //     {filteredItems}
+      //   </li>
+        
+      // ));
+      // console.log(cart)
+      // const newCart = cart.filter((cartItem) => cartItemId !== cartItemId)
+
+      // setCart(newCart)
+      // console.log( newCart)
+      setCart(cart.filter((cartItem) => cartItem !== cartItemId))
+      console.log(cartCounter)
     }
 
     return (

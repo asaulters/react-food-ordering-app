@@ -22,6 +22,8 @@ import classes from './CartModal.module.css'
 
 const CartModal = ({ isVisible, hideModal, currentCart, remove }, props) => {
 
+  let cartItemToRemove;
+  let cartItemToRemoveID;
   const removeItemFromCartHandler = (cartItem) => {
     remove(cartItem) 
   }
@@ -47,7 +49,13 @@ const CartModal = ({ isVisible, hideModal, currentCart, remove }, props) => {
                       <li className={classes.cartModalDesc}>{cartItem.description}</li>
                       
                     </div>
-                    <button className={classes.cartModalX} onClick={removeItemFromCartHandler}>X</button>
+                    <button className={classes.cartModalX} 
+                      onClick={() => {
+                        cartItemToRemove= cartItem;
+                        cartItemToRemoveID = cartItem.id
+                        remove(cartItemToRemove)
+                        }}>
+                        X</button>
                   </ul>
                 </div>
               })}
