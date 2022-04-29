@@ -17,6 +17,11 @@ import classes from '../Cart/CartModal.module.css'
 
 
 const initialState = 0;
+const ACTIONS = {
+  DECREMENT: "decrement",
+  INCREMENT: "increment"
+};
+
 const reducer = (state, action) => {
   switch (action) {
     case "increment":
@@ -52,32 +57,16 @@ const Home = (props) => {
     useEffect(() => {
         cartCounter = cart.length;
         totalPrice = cart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2);
-    }, [cart])
+    }, [cart, cartCounter])
 
     const modalHandler = () => {
       toggleModal(true)
     }
 
-    const removeCartMealItem = () => {
-      console.log('this')
-    }
-
-    
-
     const removeCI = ( cartItemId) => {
-      // console.log(cartItem) //logs cartItem.id of target
-      // const newCart = cart.filter((cartItem) => cartItem !== cartItem).map(filteredItems => (
-      //   <li>
-      //     {filteredItems}
-      //   </li>
-        
-      // ));
-      // console.log(cart)
-      // const newCart = cart.filter((cartItem) => cartItemId !== cartItemId)
-
-      // setCart(newCart)
-      // console.log( newCart)
       setCart(cart.filter((cartItem) => cartItem !== cartItemId))
+      cartCounter = cart.length -1
+      dispatch({ type: ACTIONS.DECREMENT})
       console.log(cartCounter)
     }
 
