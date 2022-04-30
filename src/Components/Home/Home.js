@@ -61,7 +61,7 @@ const Home = (props) => {
       }
       // setCartCounter(cart.length)
       totalPrice = cart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2);
-  }, [cart, cartCounter])
+  }, [cart, cartCounter.length])
 
   const modalHandler = () => {
     toggleModal(true)
