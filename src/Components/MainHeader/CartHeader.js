@@ -31,17 +31,7 @@ const CartHeader = (props) => {
         });
         
         <CartModal isVisible={isVisible} hideModal={toggleModal} cart={cartNow}  />
-        // cartModalHandler();
-        // console.log(props.cart)
     }
-
-    // const modalHandler = () => {
-    //     p
-    // }
-
-    // useEffect(() => {
-    //     console.log('useEffect from cartHeader ' + countContext.countState)
-    // }, [countContext])
 
 
     return (
