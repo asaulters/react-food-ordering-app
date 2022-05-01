@@ -53,11 +53,12 @@ const Home = (props) => {
 
   useEffect(() => {
       if(cart.length > cartCounter) {
-        incrementCounter()
-        console.log(cartCounter +1)
+        incrementCounter();
+        dispatch({ type: 'increment'});
+        console.log(cartCounter +1);
       } else if ( cart.length < cartCounter) {
-        decrementCounter()
-        console.log( cartCounter -1)
+        decrementCounter();
+        console.log( cartCounter -1);
       }
       // setCartCounter(cart.length)
       totalPrice = cart.reduce((acc, {price}) => parseFloat(acc) + parseFloat(price), 0).toFixed(2);
@@ -69,7 +70,7 @@ const Home = (props) => {
 
  const removeCI = ( cartItemId) => {
     setCart(cart.filter((cartItem) => cartItem !== cartItemId))
-    // decrementCounter();
+    dispatch({ type: 'decrement'});
     console.log(cartCounter)
   }
 
